@@ -76,6 +76,33 @@ class Village
                     'iron' => 100,
                 )
             ),
+            'Bank' => array(
+                1 => array(
+                    'wood' => 
+                    'kamien'
+                    'iron' => 
+                ),
+                2 => array(
+                    'wood' =>
+                    'kamien' =>
+                    'iron' =>
+                ),
+                3 => array(
+                    'wood' =>
+                    'kamien' =>
+                    'iron' =>
+                ),
+                4 => array(
+                    'wood' =>
+                    'kamien' =>
+                    'iron' =>
+                ),
+                5 => array(
+                    'wood' =>
+                    'kamien' =>
+                    'iron' =>
+                ),
+            )
         );
     }
     private function woodGain(int $deltaTime) : float
