@@ -1,0 +1,44 @@
+#prawo {
+    right: 0px;
+    width:85%;
+    height:100%;
+    background-color:black;
+    position:fixed;
+}
+#lewo {
+    left: 0;
+    width: 15%;
+    height:100%;
+    background-color:blue;
+    position: fixed;
+}
+#gora {
+    height:20%;
+    background-color: lightblue;
+    width:100%;
+}
+#dol {
+    left:0;
+    height: 80%;
+    bottom: 0px;
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+}
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 0px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width:100%;
+  }
+  .button:hover {
+      background-color: white;
+      color: black;
+  }
