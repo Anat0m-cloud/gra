@@ -12,11 +12,13 @@ class Village
             'woodcutter' => 0,
             'ironMine' => 0,
             'kopalniaKamienia' => 0,
+            'Bank' => 0,
         );
         $this->storage = array(
             'wood' => 50,
             'iron' => 0,
             'kamien' => 0,
+            'gold' => 0,
         );
         $this->upgradeCost = array( //tablica wszystkich budynkow
             'woodcutter' => array(
@@ -103,11 +105,21 @@ class Village
         //zwracamy zysk w czasie $deltaTime
         return $perSecondGain * $deltaTime;
     }
+    private function goldGain(int $deltaTime) : float
+    {
+        //liczymy zysk na godzine z wzoru poziom_drwala ^ 2
+        $gain = $this->buildings['Bank']* 2 * 0.5 ;
+        // liczymy zysk na sekunde (godzina/3600)
+        $perSecondGain = $gain / 3600;
+        //zwracamy zysk w czasie $deltaTime
+        return $perSecondGain * $deltaTime;
+    }
     public function gain($deltaTime) 
     {
         $this->storage['wood'] += $this->woodGain($deltaTime);
         $this->storage['iron'] += $this->ironGain($deltaTime);
         $this->storage['kamien'] += $this->kamienGain($deltaTime);
+        $this->storage['gold'] += $this->goldGain($deltaTime);
     }
     public function upgradeBuilding(string $buildingName) : bool
     {
@@ -138,6 +150,9 @@ class Village
             break;
             case 'kamien':
                 return $this->kamienGain(3600);
+            break;
+            case 'gold':
+                return $this->goldGain(3600);
             break;
             default:
                 echo "Nie ma takiego surowca!";
